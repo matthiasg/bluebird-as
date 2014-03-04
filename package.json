@@ -1,0 +1,38 @@
+{
+  "name": "bluebird-as",
+  "version": "0.0.1",
+  "description": "Higher Level functions on top of bluebird",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bluebird": "~1.0.8",
+    "cura-test-runner": "~0.0.6"
+  },
+  "devDependencies": {
+    "bluebird": "^1.0.8",
+    "cura-test-runner": "0.0.6"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "dev": "nodemon -e coffee,js test.js",
+    "test-doc": "node test --reporter doc > specs.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/matthiasg/bluebird-as.git"
+  },
+  "keywords": [
+    "bluebird",
+    "promises",
+    "sequence",
+    "parallelism"
+  ],
+  "author": "Matthias Goetzke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthiasg/bluebird-as/issues"
+  },
+  "homepage": "https://github.com/matthiasg/bluebird-as"
+}

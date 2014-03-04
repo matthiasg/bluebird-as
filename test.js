@@ -1,0 +1,1 @@
+require('cura-test-runner');
