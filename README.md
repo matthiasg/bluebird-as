@@ -21,7 +21,7 @@ javascript:
   var urls = ['http://www.google.de'];
 
   Promise.cast(urls)
-    .then as.sequenceOf(function(url){
+    .then( as.sequenceOf(function(url){
       return scrapeUrlIntoDatabaseOrSo(url);
     }))
     .then(function(){
@@ -50,7 +50,7 @@ javascript:
   var urls = ['http://www.google.de'];
 
   Promise.cast(urls)
-    .then as.sequenceWithParallelism(10,function(url){
+    .then( as.sequenceWithParallelism(10,function(url){
       return scrapeUrlIntoDatabaseOrSo(url);
     }))
     .then(function(){
