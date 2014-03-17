@@ -39,7 +39,7 @@ describe 'Higher Level Functions on top of bluebird (Promise Library)', ->
 
       maxConcurrentCalls = Math.max(concurrent,maxConcurrentCalls)
         
-      return Promise.delay(Math.random()*10).then ()->
+      return Promise.delay(Math.random()*10).finally ()->
         concurrent--
         if concurrent < 0
           throw new Error("Something went wrong. Concurrent calls should not be less than 0")
