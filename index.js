@@ -3,7 +3,7 @@
 var assert = require('assert');
 var util = require('util');
 
-var Promise = null;
+var Promise = require('bluebird');
 
 module.exports =
   {
