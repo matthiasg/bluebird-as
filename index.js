@@ -15,15 +15,7 @@ module.exports =
   };
 
 function sequenceOf(functionToCall) {
-  return function(tasks) {
-    var current = Promise.cast();
-    return Promise.map(tasks, function(task) {
-      current = current.then(function() {
-        return functionToCall(task);
-      });
-      return current;
-    });
-  };
+  return sequenceWithParallelism(1,functionToCall);
 }
 
 function sequenceWithParallelism(parallelism, functionToCall) {

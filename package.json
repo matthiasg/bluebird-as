@@ -1,6 +1,6 @@
 {
   "name": "bluebird-as",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Higher Level functions on top of bluebird",
   "main": "index.js",
   "directories": {
