@@ -41,6 +41,9 @@ coffeescript:
       doSomethingWithAllResultsCollectedInDatabase()
 ```
 
+This is like [async.eachSeries](https://github.com/caolan/async#eachSeries)
+
+
 ### sequenceWithParallelism
 Run promises in sequence but with a degree of parallelism.
 
@@ -60,7 +63,7 @@ javascript:
 
 coffeescript:
 
-```coffeescript
+```coffeescriptThis is like [async.eachSeries](https://github.com/caolan/async#eachSeries)
   urls = ['http://www.google.de']
 
   Promise.cast(urls)
@@ -69,3 +72,5 @@ coffeescript:
     .then ()->
       doSomethingWithAllResultsCollectedInDatabase()
 ```
+
+This is like [async.eachLimit](https://github.com/caolan/async#eachLimit)
