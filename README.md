@@ -63,7 +63,7 @@ javascript:
 
 coffeescript:
 
-```coffeescriptThis is like [async.eachLimit](https://github.com/caolan/async#eachlimitarr-limit-iterator-callback)
+```coffeescript
   urls = ['http://www.google.de']
 
   Promise.cast(urls)
