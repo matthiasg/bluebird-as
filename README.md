@@ -63,7 +63,7 @@ javascript:
 
 coffeescript:
 
-```coffeescriptThis is like [async.eachSeries](https://github.com/caolan/async#eachSeries)
+```coffeescriptThis is like [async.eachLimit](https://github.com/caolan/async#eachlimitarr-limit-iterator-callback)
   urls = ['http://www.google.de']
 
   Promise.cast(urls)
@@ -73,4 +73,4 @@ coffeescript:
       doSomethingWithAllResultsCollectedInDatabase()
 ```
 
-This is like [async.eachLimit](https://github.com/caolan/async#eachLimit)
+This is like [async.eachLimit](https://github.com/caolan/async#eachlimitarr-limit-iterator-callback)
