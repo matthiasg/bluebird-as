@@ -17,6 +17,9 @@
     "dev": "nodemon -e coffee,js test.js",
     "test-doc": "node test --reporter doc > specs.html"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/matthiasg/bluebird-as.git"
