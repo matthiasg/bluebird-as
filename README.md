@@ -6,11 +6,12 @@ A tiny number of helper functions to use with bluebird (other promise libraries 
 Usage
 -----
 
-var Promise = require('bluebird');
+```javascript
+  var Promise = require('bluebird');
 
-var as = require('bluebird-as');
-as.use(Promise);
-
+  var as = require('bluebird-as');
+  as.use(Promise);
+```
 
 ### sequenceOf
 Run Promises in strict sequence (without passing the result).
@@ -41,6 +42,9 @@ coffeescript:
       doSomethingWithAllResultsCollectedInDatabase()
 ```
 
+This is like [async.eachSeries](https://github.com/caolan/async#eachSeries)
+
+
 ### sequenceWithParallelism
 Run promises in sequence but with a degree of parallelism.
 
@@ -69,3 +73,5 @@ coffeescript:
     .then ()->
       doSomethingWithAllResultsCollectedInDatabase()
 ```
+
+This is like [async.eachLimit](https://github.com/caolan/async#eachlimitarr-limit-iterator-callback)
