@@ -1,13 +1,13 @@
 {
   "name": "bluebird-as",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Higher Level functions on top of bluebird",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "peerDependencies": {
-    "bluebird": "^1.0.8"
+    "bluebird": "^2.3.2"
   },
   "devDependencies": {
     "cura-test-runner": "0.0.6"
