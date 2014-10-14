@@ -1,6 +1,6 @@
 {
   "name": "bluebird-as",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Higher Level functions on top of bluebird",
   "main": "index.js",
   "directories": {
@@ -10,7 +10,7 @@
     "bluebird": "^2.3.2"
   },
   "devDependencies": {
-    "cura-test-runner": "0.0.6"
+    "cura-test-runner": "~1.0.0"
   },
   "scripts": {
     "test": "node test.js",
