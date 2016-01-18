@@ -1,1 +1,1 @@
-require('cura-test-runner');
+require('cura-test-runner/run');

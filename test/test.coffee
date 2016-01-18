@@ -54,3 +54,36 @@ describe 'Higher Level Functions on top of bluebird (Promise Library)', ->
 
 
 
+  it 'can execute in sequence with higher parallelism', (done)->
+
+    items = ( i for i in [1..5] )
+    
+    concurrent = 0
+    count = 0
+    maxConcurrentCalls = 0
+
+    PARALLELISM = 10
+
+    workOnItem = (item)->
+      concurrent++
+      if concurrent > PARALLELISM
+        throw new Error("Too many concurrent executions ##{concurrent}")
+
+      maxConcurrentCalls = Math.max(concurrent,maxConcurrentCalls)
+        
+      return Promise.delay(Math.random()*10).finally ()->
+        concurrent--
+        if concurrent < 0
+          throw new Error("Something went wrong. Concurrent calls should not be less than 0")
+        count++
+
+    Promise.cast(items)
+      .then as.sequenceWithParallelism(PARALLELISM,workOnItem)
+      .then ()->
+        maxConcurrentCalls.should.equal(items.length)
+        count.should.equal(items.length)
+        done()
+
+
+
+
