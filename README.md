@@ -23,7 +23,7 @@ javascript:
 ```javascript
   var urls = ['http://www.google.de'];
 
-  Promise.cast(urls)
+  Promise.resolve(urls)
     .then( as.sequenceOf(function(url){
       return scrapeUrlIntoDatabaseOrSo(url);
     }))
@@ -37,7 +37,7 @@ coffeescript:
 ```coffeescript
   urls = ['http://www.google.de']
 
-  Promise.cast(urls)
+  Promise.resolve(urls)
     .then as.sequenceOf (url)->
       scrapeUrlIntoDatabaseOrSo(url)
     .then ()->
@@ -55,7 +55,7 @@ javascript:
 ```javascript
   var urls = ['http://www.google.de'];
 
-  Promise.cast(urls)
+  Promise.resolve(urls)
     .then( as.sequenceWithParallelism(10,function(url){
       return scrapeUrlIntoDatabaseOrSo(url);
     }))
@@ -69,7 +69,7 @@ coffeescript:
 ```coffeescript
   urls = ['http://www.google.de']
 
-  Promise.cast(urls)
+  Promise.resolve(urls)
     .then as.sequenceWithParallelism 10, (url)->
       scrapeUrlIntoDatabaseOrSo(url)
     .then ()->

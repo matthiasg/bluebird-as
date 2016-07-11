@@ -15,7 +15,7 @@ describe 'Higher Level Functions on top of bluebird (Promise Library)', ->
           throw new Error("Execution was not in sequence. Expected previous item to be #{item-1} but was #{previousItem}")
         previousItem = item
 
-    Promise.cast(items)
+    Promise.resolve(items)
       .then as.sequenceOf(workOnItem)
       .then ()->
         previousItem.should.equal(items.length)
@@ -38,14 +38,14 @@ describe 'Higher Level Functions on top of bluebird (Promise Library)', ->
         throw new Error("Too many concurrent executions ##{concurrent}")
 
       maxConcurrentCalls = Math.max(concurrent,maxConcurrentCalls)
-        
+
       return Promise.delay(Math.random()*10).finally ()->
         concurrent--
         if concurrent < 0
           throw new Error("Something went wrong. Concurrent calls should not be less than 0")
         count++
 
-    Promise.cast(items)
+    Promise.resolve(items)
       .then as.sequenceWithParallelism(PARALLELISM,workOnItem)
       .then ()->
         maxConcurrentCalls.should.equal(PARALLELISM)
@@ -70,14 +70,14 @@ describe 'Higher Level Functions on top of bluebird (Promise Library)', ->
         throw new Error("Too many concurrent executions ##{concurrent}")
 
       maxConcurrentCalls = Math.max(concurrent,maxConcurrentCalls)
-        
+
       return Promise.delay(Math.random()*10).finally ()->
         concurrent--
         if concurrent < 0
           throw new Error("Something went wrong. Concurrent calls should not be less than 0")
         count++
 
-    Promise.cast(items)
+    Promise.resolve(items)
       .then as.sequenceWithParallelism(PARALLELISM,workOnItem)
       .then ()->
         maxConcurrentCalls.should.equal(items.length)
