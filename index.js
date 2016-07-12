@@ -52,7 +52,7 @@ function sequenceWithParallelism(parallelism, functionToCall) {
 
         assert(active<=parallelism, util.format('ERROR->active exceeding parallelism',active,parallelism));
 
-        Promise.cast( processTask(task) )
+        Promise.resolve( processTask(task) )
           .finally(function(){
             active--;
             processNextTask();
